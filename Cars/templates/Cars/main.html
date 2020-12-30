@@ -1,0 +1,156 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Numbers & Machines</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="{% static 'website/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="{% static 'website/css/shop-homepage.css' %}" rel="stylesheet">
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+
+<body>
+<style>
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+body {
+ font-family: 'montserrat', sans-serif;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ min-height: 100vh;
+ background-color: #EEE;
+}
+
+.form {
+ border-radius: 16px;
+ padding: 60px;
+ align:center;
+ width: 150%;
+ max-width: 480px;
+ box-shadow:
+  -2px -2px 6px 2px #FFF,
+  2px 2px 6px 2px #C4C4C4;
+}
+
+h3 {
+ color: #AABBBB;
+ font-size: 28px;
+ font-weight: 900;
+ text-shadow: 2px 2px 2px #FFF, -1px -1px -1px #A4A4A4;
+ text-align: center;
+ margin-bottom: 16px;
+}
+
+.input {
+ appearance: none;
+ border: none;
+ outline: none;
+ background: none;
+ padding: 16px;
+ border-radius: 16px;
+ 
+ display: block;
+ width: 100%;
+ max-width: 320px;
+ margin: 0 auto 16px;
+ 
+ box-shadow:
+   inset -4px -4px 10px 4px #FFF,
+   inset 4px 4px 10px 4px #C4C4C4;
+ 
+ color: #AAA;
+ font-size: 18px;
+ 
+ transition: 0.2s ease-out;
+}
+
+
+.input:placeholder {
+ color: #CCC;
+}
+
+.input:focus {
+ box-shadow:
+   inset -1px -1px 3px 1px #FFF,
+   inset 1px 1px 3px 1px #C4C4C4;
+}
+
+.btn {
+ color: #AABBBB;
+ cursor: pointer;
+ border: 3px solid transparent;
+ padding: 13px;
+ font-weight: 700;
+ box-shadow: 
+  -4px -4px 13px 4px #FFF,
+  4px 4px 13px 4px #C4C4C4;
+ 
+ .icon {
+  margin-right: 30px;
+ }
+}
+
+.btn:focus {
+ box-shadow: 
+  -4px -4px 13px 4px #FFF,
+  4px 4px 13px 4px #C4C4C4;
+}
+
+.btn:hover {
+ box-shadow:
+  -3px -3px 8px 3px #FFF,
+  3px 3px 8px 3px #C4C4C4;
+}
+
+.btn.active {
+ color: #FF5858;
+ box-shadow:
+  -2px -2px 8px 2px #C4C4C4,
+  2px 2px 8px 2px #FFF;
+ border-color: #DFDFDF;
+}
+
+.btn:active {
+ color: #FF5858;
+ box-shadow: 
+  -4px -4px 13px 4px #C4C4C4,
+  4px 4px 13px 4px #FFF;
+ border-color: #DFDFDF;
+}
+
+
+</style>
+
+<form id="file_form" action="" class="form" method="post" enctype="multipart/form-data">
+<h3>Choose a File</h3>
+{% csrf_token %}
+{% comment %} <label for="file1"> Upload a file</label> {% endcomment %}
+<input type="file" class="input "id="file1" name="file">
+<button type="submit" class="input btn" id="save" >Upload</button>
+</form>
+<button type="button" class="input btn" id="btn2" value="weight">WEIGHT</button>
+<button type="button" class="input btn" id="btn1" value="mpg">MPG</button>
+<section id="graph" >
+{% include 'Cars/graphs.html' %}
+</section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="{% static 'Cars/js/main.js' %}"></script>
+</body>
+</html>
+
+
