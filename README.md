@@ -4,13 +4,10 @@
 
 1. Clone the project.
     ```shell
-    $ git clone https://github.com/Hrithik0707/Qzzo_task.git
+    $ git clone https://github.com/Hrithik0707/Number-machines.git
     ```
-2. `cd` intro the project directory
-    ```shell
-    $ cd Qzzo
-    ```
-3. Create a new virtual environment using Python 3.7 and activate it.
+
+2. Create a new virtual environment using Python 3.7 and activate it.
     ```shell
     $ python3 -m venv env
     $ source env/bin/activate
