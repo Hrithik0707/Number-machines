@@ -89,7 +89,7 @@ $(document).ready(function() {
             success: function(data){
                 console.log("success");
                 if(data.status =="Save"){
-                    $('#graph').html(a+data.plt_div);
+                    $('#graph').html(data.plt_div);
                 }
             }
             

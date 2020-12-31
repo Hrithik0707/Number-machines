@@ -18,9 +18,9 @@
  <h3>Numbers & Machines Sign UP</h3>
  {% csrf_token %}
  <input type="text" class="input" placeholder="Username" name="user_name" />
- <input type="email" class="input" placeholder="Username" name="email" />
- <input type="password" class="input" placeholder="Username" name="password1" />
- <input type="password" class="input" placeholder="Password" name="password2"/>
+ <input type="email" class="input" placeholder="Email" name="email" />
+ <input type="password" class="input" placeholder="Password" name="password1" />
+ <input type="password" class="input" placeholder="Confirm Password" name="password2"/>
  <button class="input btn" type="submit"><i class="icon ion-md-lock"></i>REGISTER</button>
  {%for message in messages %}
                     <h5>{{message}}</h5>
